@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mod Skin Nakroth</title>
+    <style>
+        /* Thiết lập giao diện chính */
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background: linear-gradient(135deg, #1a1a40, #4c0099);
+            color: white;
+            margin: 0;
+            padding: 0;
+            scroll-behavior: smooth; /* Cuộn mượt mà */
+        }
+
+        /* Tùy chỉnh thanh cuộn */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #00ffff;
+            border-radius: 10px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        /* Tiêu đề đẹp hơn */
+        h2 {
+            font-size: 28px;
+            margin-top: 20px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        /* Hộp chứa nội dung chính */
+        .container {
+            margin-top: 30px;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 20px;
+            border-radius: 15px;
+            display: inline-block;
+            box-shadow: 0px 0px 15px rgba(0, 255, 255, 0.4);
+            border: 2px solid rgba(0, 255, 255, 0.4);
+            transition: 0.3s;
+        }
+
+        .container:hover {
+            border-color: #00ffff;
+            box-shadow: 0px 0px 25px rgba(0, 255, 255, 0.7);
+        }
+
+        /* Nút bấm */
+        button {
+            padding: 12px 24px;
+            margin: 10px;
+            font-size: 18px;
+            font-weight: bold;
+            color: white;
+            background: linear-gradient(90deg, #00ffff, #0066ff);
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: 0.3s;
+            box-shadow: 0px 5px 15px rgba(0, 255, 255, 0.5);
+        }
+
+        button:hover {
+            background: linear-gradient(90deg, #0066ff, #00ffff);
+            transform: scale(1.08);
+            box-shadow: 0px 5px 20px rgba(0, 255, 255, 0.8);
+        }
+
+        /* Phần hiển thị video hướng dẫn */
+        .thumbnail {
+            margin-top: 20px;
+        }
+
+        .thumbnail img {
+            width: 90%;
+            max-width: 500px;
+            cursor: pointer;
+            border-radius: 10px;
+            transition: 0.3s;
+            box-shadow: 0px 0px 15px rgba(255, 255, 255, 0.2);
+        }
+
+        .thumbnail img:hover {
+            transform: scale(1.08);
+            box-shadow: 0px 0px 25px rgba(255, 255, 255, 0.5);
+            border: 2px solid rgba(255, 255, 255, 0.5);
+        }
+
+        /* Thêm nội dung giả lập để test hiệu ứng cuộn */
+        .spacer {
+            height: 600px;
+        }
+
+        /* Nút cuộn lên đầu trang */
+        .scroll-top {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: #00ffff;
+            color: #1a1a40;
+            padding: 10px 15px;
+            border-radius: 50%;
+            cursor: pointer;
+            display: none;
+            font-size: 18px;
+            font-weight: bold;
+            transition: 0.3s;
+            box-shadow: 0px 5px 15px rgba(0, 255, 255, 0.5);
+        }
+
+        .scroll-top:hover {
+            background: #0066ff;
+            color: white;
+            transform: scale(1.1);
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Mod Skin Nakroth</h2>
+
+    <!-- Thumbnail Video -->
+    <div class="thumbnail">
+        <p>Nakroth Thứ Nguyên Vệ Thần:</p>
+        <a href="" target="_blank">
+            <img src="https://img.youtube.com/vi//maxresdefault.jpg" alt="Thumbnail Video">
+        </a>
+    </div>
+
+    <!-- Hộp chứa nút bấm -->
+    <div class="container">
+        <button onclick="window.location.href='https://www.mediafire.com/file/1ejral5enh067z0/Nakroth_Th%25E1%25BB%25A9_nguy%25C3%25AAn_v%25E1%25BB%2587_th%25E1%25BA%25A7n_%255BMMNAOV%255D.zip/file'">
+            🚀 Tải Ngay
+        </button>
+        <button onclick="window.location.href='index.html'">🔙 Quay Lại</button>
+    </div>
+
+    <!-- Nội dung giả lập để test cuộn -->
+    <div class="spacer"></div>
+
+    <!-- Nút cuộn lên đầu -->
+    <div class="scroll-top" onclick="scrollToTop()">▲</div>
+
+    <script>
+        // Hiển thị nút cuộn lên khi lướt xuống
+        window.onscroll = function () {
+            var scrollButton = document.querySelector(".scroll-top");
+            if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+                scrollButton.style.display = "block";
+            } else {
+                scrollButton.style.display = "none";
+            }
+        };
+
+        // Hàm cuộn lên đầu trang
+        function scrollToTop() {
+            window.scrollTo({ top: 0, behavior: "smooth" });
+        }
+    </script>
+
+</body>
+</html>
