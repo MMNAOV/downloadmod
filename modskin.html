@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mod Skin</title>
+    <title>Mod Skin Billow</title>
     <style>
         /* Thiết lập giao diện chính */
         body {
@@ -13,6 +13,21 @@
             color: white;
             margin: 0;
             padding: 0;
+            scroll-behavior: smooth; /* Cuộn mượt mà */
+        }
+
+        /* Tùy chỉnh thanh cuộn */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #00ffff;
+            border-radius: 10px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: rgba(255, 255, 255, 0.1);
         }
 
         /* Tiêu đề đẹp hơn */
@@ -80,15 +95,43 @@
             box-shadow: 0px 0px 25px rgba(255, 255, 255, 0.5);
             border: 2px solid rgba(255, 255, 255, 0.5);
         }
+
+        /* Thêm nội dung giả lập để test hiệu ứng cuộn */
+        .spacer {
+            height: 600px;
+        }
+
+        /* Nút cuộn lên đầu trang */
+        .scroll-top {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: #00ffff;
+            color: #1a1a40;
+            padding: 10px 15px;
+            border-radius: 50%;
+            cursor: pointer;
+            display: none;
+            font-size: 18px;
+            font-weight: bold;
+            transition: 0.3s;
+            box-shadow: 0px 5px 15px rgba(0, 255, 255, 0.5);
+        }
+
+        .scroll-top:hover {
+            background: #0066ff;
+            color: white;
+            transform: scale(1.1);
+        }
     </style>
 </head>
 <body>
 
-    <h2>Web Mod Skin</h2>
+    <h2>Mod Skin Billow</h2>
 
     <!-- Thumbnail Video -->
     <div class="thumbnail">
-        <p>Xem video hướng dẫn:</p>
+        <p>Billow Thiên Tướng - Độ Ách:</p>
         <a href="https://youtu.be/MuQlEY346n8?si=sHk77xRS64T4UFS1" target="_blank">
             <img src="https://img.youtube.com/vi/MuQlEY346n8/maxresdefault.jpg" alt="Thumbnail Video">
         </a>
@@ -101,6 +144,29 @@
         </button>
         <button onclick="window.location.href='index.html'">🔙 Quay Lại</button>
     </div>
+
+    <!-- Nội dung giả lập để test cuộn -->
+    <div class="spacer"></div>
+
+    <!-- Nút cuộn lên đầu -->
+    <div class="scroll-top" onclick="scrollToTop()">▲</div>
+
+    <script>
+        // Hiển thị nút cuộn lên khi lướt xuống
+        window.onscroll = function () {
+            var scrollButton = document.querySelector(".scroll-top");
+            if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+                scrollButton.style.display = "block";
+            } else {
+                scrollButton.style.display = "none";
+            }
+        };
+
+        // Hàm cuộn lên đầu trang
+        function scrollToTop() {
+            window.scrollTo({ top: 0, behavior: "smooth" });
+        }
+    </script>
 
 </body>
 </html>
