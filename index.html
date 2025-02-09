@@ -5,29 +5,147 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Web Download Mod</title>
     <style>
+        /* Giao diện chung */
         body {
             font-family: Arial, sans-serif;
             text-align: center;
-            background-color: #f4f4f4;
+            background: linear-gradient(135deg, #1a1a40, #4c0099);
+            color: white;
+            margin: 0;
+            padding: 0;
+            scroll-behavior: smooth;
         }
-        .menu {
+
+        h2 {
             margin-top: 20px;
+            font-size: 26px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
         }
-        button {
-            padding: 10px 20px;
-            margin: 5px;
-            font-size: 16px;
+
+        /* Thanh cuộn tùy chỉnh */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #00ffff;
+            border-radius: 10px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        /* Menu chứa các mục */
+        .menu {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+            padding: 20px;
+            max-width: 800px;
+            margin: auto;
+        }
+
+        /* Nút chọn */
+        .menu button {
+            flex: 1 1 calc(33.333% - 30px);
+            padding: 15px;
+            font-size: 18px;
+            font-weight: bold;
+            color: white;
+            background: linear-gradient(90deg, #00ffff, #0066ff);
+            border: none;
+            border-radius: 8px;
             cursor: pointer;
+            transition: 0.3s;
+            box-shadow: 0px 5px 15px rgba(0, 255, 255, 0.5);
+        }
+
+        .menu button:hover {
+            background: linear-gradient(90deg, #0066ff, #00ffff);
+            transform: scale(1.05);
+            box-shadow: 0px 5px 20px rgba(0, 255, 255, 0.8);
+        }
+
+        /* Đảm bảo chỉ có 3 mục trên mỗi hàng */
+        @media (max-width: 768px) {
+            .menu button {
+                flex: 1 1 calc(50% - 30px);
+            }
+        }
+
+        @media (max-width: 480px) {
+            .menu button {
+                flex: 1 1 100%;
+            }
+        }
+
+        /* Thêm khoảng trống để cuộn */
+        .spacer {
+            height: 600px;
+        }
+
+        /* Nút cuộn lên đầu */
+        .scroll-top {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: #00ffff;
+            color: #1a1a40;
+            padding: 10px 15px;
+            border-radius: 50%;
+            cursor: pointer;
+            display: none;
+            font-size: 18px;
+            font-weight: bold;
+            transition: 0.3s;
+            box-shadow: 0px 5px 15px rgba(0, 255, 255, 0.5);
+        }
+
+        .scroll-top:hover {
+            background: #0066ff;
+            color: white;
+            transform: scale(1.1);
         }
     </style>
 </head>
 <body>
 
     <h2>Chọn Thứ Cần Mod</h2>
+
     <div class="menu">
         <button onclick="window.location.href='resources.html'">1. Resources</button>
-        <button onclick="window.location.href='billowmodskin.html'">2. Mod Billow</button>
+        <button onclick="window.location.href='mod2.html'">2. Mod Billow</button>
+        <button onclick="window.location.href='mod3.html'">3. Mod 3</button>
+        <button onclick="window.location.href='mod4.html'">4. Mod 4</button>
+        <button onclick="window.location.href='mod5.html'">5. Mod 5</button>
+        <button onclick="window.location.href='mod6.html'">6. Mod 6</button>
     </div>
+
+    <!-- Nội dung giả lập để test cuộn -->
+    <div class="spacer"></div>
+
+    <!-- Nút cuộn lên đầu -->
+    <div class="scroll-top" onclick="scrollToTop()">▲</div>
+
+    <script>
+        // Hiển thị nút cuộn lên khi lướt xuống
+        window.onscroll = function () {
+            var scrollButton = document.querySelector(".scroll-top");
+            if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+                scrollButton.style.display = "block";
+            } else {
+                scrollButton.style.display = "none";
+            }
+        };
+
+        // Hàm cuộn lên đầu trang
+        function scrollToTop() {
+            window.scrollTo({ top: 0, behavior: "smooth" });
+        }
+    </script>
 
 </body>
 </html>
