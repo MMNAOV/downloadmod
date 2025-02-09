@@ -142,16 +142,27 @@
         <button onclick="window.location.href='https://www.mediafire.com/file/t84s1uepix3lskv/Bolt_Baron_Thi%25C3%25AAn_Ph%25E1%25BB%25A7_-_T%25C6%25B0_M%25E1%25BB%2587nh_C%25C3%25B3_N%25C3%25BAt_B%25E1%25BA%25A5m_%255BMMNAOV%255D.zip/file'">
             🚀 Tải Ngay
         </button>
-        <button onclick="window.location.href='index.html'">🔙 Quay Lại</button>
     </div>
 
     <!-- Nội dung giả lập để test cuộn -->
     <div class="spacer"></div>
 
+    <p>Lướt Từ Trái Sang Phải Để Quay Lại<p>
+    
     <!-- Nút cuộn lên đầu -->
     <div class="scroll-top" onclick="scrollToTop()">▲</div>
 
     <script>
+        document.addEventListener("touchstart", function (e) {
+            let startX = e.touches[0].clientX;
+
+            document.addEventListener("touchmove", function (e) {
+                let endX = e.touches[0].clientX;
+                if (endX - startX > 100) { // Nếu vuốt sang phải trên 100px
+                    window.history.back(); // Quay lại trang trước
+                }
+            }, { once: true });
+        });    	
         // Hiển thị nút cuộn lên khi lướt xuống
         window.onscroll = function () {
             var scrollButton = document.querySelector(".scroll-top");
@@ -167,6 +178,5 @@
             window.scrollTo({ top: 0, behavior: "smooth" });
         }
     </script>
-
 </body>
 </html>
