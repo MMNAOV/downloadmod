@@ -10,7 +10,7 @@
             text-align: center;
             background-color: #f4f4f4;
         }
-        .menu, .download-menu {
+        .menu {
             margin-top: 20px;
         }
         button {
@@ -19,36 +19,15 @@
             font-size: 16px;
             cursor: pointer;
         }
-        #download-section {
-            display: none;
-        }
     </style>
 </head>
 <body>
 
     <h2>Chọn Web Để Mở</h2>
     <div class="menu">
-        <button onclick="openWebsite('https://example.com')">1. Web Mặc Định</button>
-        <button onclick="openWebsite('https://modskin.com', true)">2. Web Mod Skin</button>
+        <button onclick="window.open('https://example.com', '_blank')">1. Web Mặc Định</button>
+        <button onclick="window.location.href='modskin.html'">2. Web Mod Skin</button>
     </div>
-
-    <div id="download-section" class="download-menu">
-        <h3>Tải File Mod Skin</h3>
-        <button onclick="downloadFile()">Download</button>
-    </div>
-
-    <script>
-        function openWebsite(url, showDownload = false) {
-            window.open(url, "_blank");
-            if (showDownload) {
-                document.getElementById("download-section").style.display = "block";
-            }
-        }
-
-        function downloadFile() {
-            window.location.href = "https://www.mediafire.com/file/3yymfy4mbfp229i/Resources_2D8.zip/file";
-        }
-    </script>
 
 </body>
 </html>
