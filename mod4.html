@@ -148,10 +148,22 @@
     <!-- Nội dung giả lập để test cuộn -->
     <div class="spacer"></div>
 
+    <p>Lướt Từ Trái Sang Phải Để Quay Lại<p>
+    
     <!-- Nút cuộn lên đầu -->
     <div class="scroll-top" onclick="scrollToTop()">▲</div>
 
     <script>
+        document.addEventListener("touchstart", function (e) {
+            let startX = e.touches[0].clientX;
+
+            document.addEventListener("touchmove", function (e) {
+                let endX = e.touches[0].clientX;
+                if (endX - startX > 100) { // Nếu vuốt sang phải trên 100px
+                    window.history.back(); // Quay lại trang trước
+                }
+            }, { once: true });
+        });    	
         // Hiển thị nút cuộn lên khi lướt xuống
         window.onscroll = function () {
             var scrollButton = document.querySelector(".scroll-top");
@@ -167,6 +179,5 @@
             window.scrollTo({ top: 0, behavior: "smooth" });
         }
     </script>
-
 </body>
 </html>
