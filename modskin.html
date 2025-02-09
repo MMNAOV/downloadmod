@@ -19,14 +19,15 @@
             font-size: 16px;
             cursor: pointer;
         }
-        .thumbnail {
+        .video-container {
             margin-top: 20px;
         }
-        .thumbnail img {
+        iframe {
             width: 80%;
-            max-width: 500px;
-            cursor: pointer;
+            max-width: 560px;
+            height: 315px;
             border-radius: 10px;
+            border: none;
         }
     </style>
 </head>
@@ -34,12 +35,10 @@
 
     <h2>Web Mod Skin</h2>
 
-    <!-- Thumbnail Video -->
-    <div class="thumbnail">
+    <!-- Nhúng Video YouTube -->
+    <div class="video-container">
         <p>Xem video hướng dẫn:</p>
-        <a href="https://youtu.be/MuQlEY346n8?si=sHk77xRS64T4UFS1" target="_blank">
-            <img src="https://img.youtube.com/vi/MuQlEY346n8/maxresdefault.jpg" alt="Thumbnail Video">
-        </a>
+        <iframe src="https://www.youtube.com/embed/MuQlEY346n8" allowfullscreen></iframe>
     </div>
 
     <!-- Nút Download -->
