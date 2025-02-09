@@ -132,7 +132,7 @@
     <!-- Thumbnail Video -->
     <div class="thumbnail">
         <p>Nakroth Thứ Nguyên Vệ Thần:</p>
-        <a href="https://youtu.be/pDEJU3cgp-s?si=g-4R-FDALZNLBr4_" target="_blank">
+        <a href="https://youtu.be/pDEJU3cgp-s?si=H5zD5CgvQVc2NGQX" target="_blank">
             <img src="https://img.youtube.com/vi/pDEJU3cgp-s/maxresdefault.jpg" alt="Thumbnail Video">
         </a>
     </div>
@@ -142,8 +142,22 @@
         <button onclick="window.location.href='https://www.mediafire.com/file/1ejral5enh067z0/Nakroth_Th%25E1%25BB%25A9_nguy%25C3%25AAn_v%25E1%25BB%2587_th%25E1%25BA%25A7n_%255BMMNAOV%255D.zip/file'">
             🚀 Tải Ngay
         </button>
-        <button onclick="window.location.href='index.html'">🔙 Quay Lại</button>
     </div>
+    
+    <!-- Thumbnail Video -->
+    <div class="thumbnail">
+        <p>Nakroth Lôi Quang Sứ:</p>
+        <a href="https://youtu.be/EdUnvaXmV-w?si=cgDd5V7Aut0PjXib" target="_blank">
+            <img src="https://img.youtube.com/vi/EdUnvaXmV-w/maxresdefault.jpg" alt="Thumbnail Video">
+        </a>
+    </div>
+
+    <!-- Hộp chứa nút bấm -->
+    <div class="container">
+        <button onclick="window.location.href='https://www.mediafire.com/file/yumo0i24u2q7lr7/Nakroth_L%25C3%25B4i_quang_s%25E1%25BB%25A9_%255BMMNAOV%255D.zip/file'">
+            🚀 Tải Ngay
+        </button>
+    </div>    
 
     <!-- Nội dung giả lập để test cuộn -->
     <div class="spacer"></div>
@@ -152,6 +166,16 @@
     <div class="scroll-top" onclick="scrollToTop()">▲</div>
 
     <script>
+        document.addEventListener("touchstart", function (e) {
+            let startX = e.touches[0].clientX;
+
+            document.addEventListener("touchmove", function (e) {
+                let endX = e.touches[0].clientX;
+                if (endX - startX > 100) { // Nếu vuốt sang phải trên 100px
+                    window.history.back(); // Quay lại trang trước
+                }
+            }, { once: true });
+        });    	
         // Hiển thị nút cuộn lên khi lướt xuống
         window.onscroll = function () {
             var scrollButton = document.querySelector(".scroll-top");
