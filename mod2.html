@@ -139,7 +139,7 @@
 
     <!-- Hộp chứa nút bấm -->
     <div class="container">
-        <button onclick="window.location.href='https://www.mediafire.com/file/1ejral5enh067z0/Nakroth_Th%25E1%25BB%25A9_nguy%25C3%25AAn_v%25E1%25BB%2587_th%25E1%25BA%25A7n_%255BMMNAOV%255D.zip/file'">
+        <button onclick="window.location.href='https://www.mediafire.com/file/vz0h25hpjtbr6te/Billow_Thi%25C3%25AAn_T%25C6%25B0%25E1%25BB%259Bng_-_%25C4%2590%25E1%25BB%2599_%25C3%2581ch_C%25C3%25B3_N%25C3%25BAt_B%25E1%25BA%25A5m_%255BMMNAOV%255D.zip/file'">
             🚀 Tải Ngay
         </button>
     </div>
@@ -147,7 +147,33 @@
     <!-- Nội dung giả lập để test cuộn -->
     <div class="spacer"></div>
     
-    <p>Lướt Từ Trái Sang Phải Để Quay Lại<p>
+    <p class="swipe-hint">👉 Lướt từ trái sang phải để quay lại</p>
+    
+    <style>
+    /* Hiệu ứng thông báo lướt */
+    .swipe-hint {
+        font-size: 18px;
+        font-weight: bold;
+        color: #00ffff;
+        background: rgba(0, 255, 255, 0.1);
+        padding: 10px 15px;
+        display: inline-block;
+        border-radius: 8px;
+        box-shadow: 0px 0px 10px rgba(0, 255, 255, 0.5);
+        animation: glow 1.5s infinite alternate;
+        margin-top: 20px;
+    }
+    
+    /* Hiệu ứng sáng dần */
+    @keyframes glow {
+        0% {
+            box-shadow: 0px 0px 10px rgba(0, 255, 255, 0.5);
+        }
+        100% {
+            box-shadow: 0px 0px 20px rgba(0, 255, 255, 1);
+        }
+    }
+    </style>
     
     <!-- Nút cuộn lên đầu -->
     <div class="scroll-top" onclick="scrollToTop()">▲</div>
