@@ -3,194 +3,277 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mod Skin Nakroth</title>
+    <title>Mod Skin Nakrot</title>
     <style>
-        /* Thiết lập giao diện chính */
+        /* Thiết lập giao diện */
         body {
             font-family: Arial, sans-serif;
             text-align: center;
-            background: linear-gradient(135deg, #1a1a40, #4c0099);
+            background: linear-gradient(135deg, #000428, #004e92);
             color: white;
             margin: 0;
             padding: 0;
-            scroll-behavior: smooth; /* Cuộn mượt mà */
+            scroll-behavior: smooth;
+            animation: fadeIn 1s ease-in-out;
         }
 
-        /* Tùy chỉnh thanh cuộn */
-        ::-webkit-scrollbar {
-            width: 8px;
+        /* Hiệu ứng vào trang */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
         }
 
-        ::-webkit-scrollbar-thumb {
-            background: #00ffff;
-            border-radius: 10px;
-        }
-
-        ::-webkit-scrollbar-track {
-            background: rgba(255, 255, 255, 0.1);
-        }
-
-        /* Tiêu đề đẹp hơn */
+        /* Tiêu đề nâng cấp */
         h2 {
-            font-size: 28px;
+            font-size: 32px;
             margin-top: 20px;
             text-transform: uppercase;
             letter-spacing: 2px;
+            color: #ff00ff;
+            text-shadow: 0px 0px 15px rgba(255, 0, 255, 0.8);
+            animation: neonGlow 1.5s infinite alternate;
+            text-align: center; /* Căn giữa */
+            display: block; /* Giữ thẳng hàng */
         }
 
-        /* Hộp chứa nội dung chính */
+        /* Hiệu ứng Neon */
+        @keyframes neonGlow {
+            0% { text-shadow: 0 0 10px #ff00ff; }
+            100% { text-shadow: 0 0 20px #ff00ff, 0 0 30px #ff00ff; }
+        }
+
+        /* Tiêu đề skin */
+        .title-skin {
+            font-size: 24px;
+            font-weight: bold;
+            color: #00ffff;
+            text-shadow: 0px 0px 12px rgba(0, 255, 255, 1);
+            margin-top: 15px;
+        }
+
+        /* Hộp chứa */
         .container {
-            margin-top: 30px;
+            margin-top: 20px;
             background: rgba(255, 255, 255, 0.1);
             padding: 20px;
             border-radius: 15px;
             display: inline-block;
-            box-shadow: 0px 0px 15px rgba(0, 255, 255, 0.4);
-            border: 2px solid rgba(0, 255, 255, 0.4);
+            box-shadow: 0px 0px 20px rgba(0, 255, 255, 0.5);
+            border: 2px solid rgba(0, 255, 255, 0.5);
             transition: 0.3s;
+            animation: fadeIn 1.2s ease-in-out;
         }
 
         .container:hover {
+            transform: scale(1.05);
             border-color: #00ffff;
-            box-shadow: 0px 0px 25px rgba(0, 255, 255, 0.7);
+            box-shadow: 0px 0px 30px rgba(0, 255, 255, 0.8);
         }
 
-        /* Nút bấm */
+        /* Nút tải */
         button {
             padding: 12px 24px;
-            margin: 10px;
-            font-size: 18px;
+            font-size: 20px;
             font-weight: bold;
             color: white;
-            background: linear-gradient(90deg, #00ffff, #0066ff);
+            background: linear-gradient(90deg, #ff00ff, #0066ff);
             border: none;
-            border-radius: 8px;
+            border-radius: 10px;
             cursor: pointer;
             transition: 0.3s;
-            box-shadow: 0px 5px 15px rgba(0, 255, 255, 0.5);
+            box-shadow: 0px 5px 20px rgba(255, 0, 255, 0.6);
         }
 
         button:hover {
-            background: linear-gradient(90deg, #0066ff, #00ffff);
+            background: linear-gradient(90deg, #0066ff, #ff00ff);
             transform: scale(1.08);
-            box-shadow: 0px 5px 20px rgba(0, 255, 255, 0.8);
+            box-shadow: 0px 5px 25px rgba(255, 0, 255, 0.8);
         }
 
-        /* Phần hiển thị video hướng dẫn */
-        .thumbnail {
-            margin-top: 20px;
+        /* Hiệu ứng rung nhẹ khi di chuột */
+        @keyframes shake {
+            0% { transform: translateX(0); }
+            25% { transform: translateX(-2px); }
+            50% { transform: translateX(2px); }
+            75% { transform: translateX(-2px); }
+            100% { transform: translateX(0); }
         }
 
-        .thumbnail img {
-            width: 90%;
-            max-width: 500px;
-            cursor: pointer;
-            border-radius: 10px;
-            transition: 0.3s;
-            box-shadow: 0px 0px 15px rgba(255, 255, 255, 0.2);
+        button:active {
+            animation: shake 0.3s;
         }
 
-        .thumbnail img:hover {
-            transform: scale(1.08);
-            box-shadow: 0px 0px 25px rgba(255, 255, 255, 0.5);
-            border: 2px solid rgba(255, 255, 255, 0.5);
+        /* Hiệu ứng nhấp nháy */
+        .swipe-hint {
+            font-size: 18px;
+            font-weight: bold;
+            color: #00ffff;
+            background: rgba(0, 255, 255, 0.2);
+            padding: 10px 15px;
+            display: inline-block;
+            border-radius: 8px;
+            box-shadow: 0px 0px 15px rgba(0, 255, 255, 0.6);
+            animation: glow 1.5s infinite alternate;
+            margin-top: 100px;
         }
 
-        /* Thêm nội dung giả lập để test hiệu ứng cuộn */
-        .spacer {
-            height: 600px;
-        }
-
-        /* Nút cuộn lên đầu trang */
+        /* Nút cuộn lên */
         .scroll-top {
             position: fixed;
             bottom: 20px;
             right: 20px;
-            background: #00ffff;
-            color: #1a1a40;
-            padding: 10px 15px;
+            background: #ff00ff;
+            color: white;
+            padding: 12px;
             border-radius: 50%;
             cursor: pointer;
             display: none;
             font-size: 18px;
             font-weight: bold;
             transition: 0.3s;
-            box-shadow: 0px 5px 15px rgba(0, 255, 255, 0.5);
+            box-shadow: 0px 5px 15px rgba(255, 0, 255, 0.6);
         }
 
         .scroll-top:hover {
             background: #0066ff;
-            color: white;
             transform: scale(1.1);
         }
+
+.skin-box {
+    width: 85%; /* Chiếm 90% chiều rộng màn hình */
+    max-width: 600px; /* Giữ không quá lớn trên màn hình rộng */
+    padding: 20px;
+    border: 2px solid #00ffff;
+    border-radius: 15px; /* Bo góc mềm mại */
+    background: rgba(0, 255, 255, 0.1);
+    box-shadow: 0px 0px 20px rgba(0, 255, 255, 0.5);
+    transition: 0.3s;
+    animation: fadeIn 1.2s ease-in-out;
+    text-align: center;
+    margin: 20px auto; /* Căn giữa trên trang */
+}
+
+.skin-box:hover {
+    transform: scale(1.05);
+    border-color: #00ffff;
+    box-shadow: 0px 0px 30px rgba(0, 255, 255, 0.8);
+}
     </style>
+
 </head>
 <body>
 
     <h2>Mod Skin Nakroth</h2>
-
-    <!-- Thumbnail Video -->
-    <div class="thumbnail">
-        <p>Nakroth Thứ Nguyên Vệ Thần:</p>
-        <a href="https://youtu.be/pDEJU3cgp-s?si=H5zD5CgvQVc2NGQX" target="_blank">
-            <img src="https://img.youtube.com/vi/pDEJU3cgp-s/maxresdefault.jpg" alt="Thumbnail Video">
-        </a>
-    </div>
-
-    <!-- Hộp chứa nút bấm -->
+    <div class="skin-box">
+    <p class="title-skin">Nakroth Chiến Binh Hỏa Ngục</p>
     <div class="container">
-        <button onclick="window.location.href='https://www.mediafire.com/file/1ejral5enh067z0/Nakroth_Th%25E1%25BB%25A9_nguy%25C3%25AAn_v%25E1%25BB%2587_th%25E1%25BA%25A7n_%255BMMNAOV%255D.zip/file'">
+        <button onclick="playSound(); window.location.href='https://www.mediafire.com/file/cupcepa1szrei8m/Nakroth_Chi%25E1%25BA%25BFn_binh_h%25E1%25BB%258Fa_ng%25E1%25BB%25A5c_%255BMMNAOV%255D.zip/file'">
             🚀 Tải Ngay
         </button>
     </div>
+</div>
+
+    <div class="skin-box">
+    <p class="title-skin">Nakroth Bboy Công Nghệ</p>
+    <div class="container">
+        <button onclick="playSound(); window.location.href='https://www.mediafire.com/file/obmqwrdb1pyrq9y/Nakroth_Bboy_c%25C3%25B4ng_ngh%25E1%25BB%2587_%255BMMNAOV%255D.zip/file'">
+            🚀 Tải Ngay
+        </button>
+    </div>
+</div>
+
+    <div class="skin-box">
+    <p class="title-skin">Nakroth Siêu Việt</p>
+    <div class="container">
+        <button onclick="playSound(); window.location.href='https://www.mediafire.com/file/vxxvl7k1xhxd7d7/Nakroth_Si%25C3%25AAu_vi%25E1%25BB%2587t_%255BMMNAOV%255D.zip/file'">
+            🚀 Tải Ngay
+        </button>
+    </div>
+</div>
+
+    <div class="skin-box">
+    <p class="title-skin">Nakroth Khiêu Chiến</p>
+    <div class="container">
+        <button onclick="playSound(); window.location.href='https://www.mediafire.com/file/7pkj7jbtroxse7b/Nakroth_Khi%25C3%25AAu_chi%25E1%25BA%25BFn_%255BMMNAOV%255D.zip/file'">
+            🚀 Tải Ngay
+        </button>
+    </div>
+</div>
+
+    <div class="skin-box">
+    <p class="title-skin">Nakroth Quán Quân</p>
+    <div class="container">
+        <button onclick="playSound(); window.location.href='https://www.mediafire.com/file/q7ez1xzrtjiy8ok/Nakroth_Qu%25C3%25A1n_qu%25C3%25A2n_%255BMMNAOV%255D.zip/file'">
+            🚀 Tải Ngay
+        </button>
+    </div>
+</div>
     
-    <!-- Thumbnail Video -->
-    <div class="thumbnail">
-        <p>Nakroth Lôi Quang Sứ:</p>
-        <a href="https://youtu.be/EdUnvaXmV-w?si=cgDd5V7Aut0PjXib" target="_blank">
-            <img src="https://img.youtube.com/vi/EdUnvaXmV-w/maxresdefault.jpg" alt="Thumbnail Video">
-        </a>
-    </div>
-
-    <!-- Hộp chứa nút bấm -->
+    <div class="skin-box">
+    <p class="title-skin">Nakroth Lôi Quang Sứ</p>
     <div class="container">
-        <button onclick="window.location.href='https://www.mediafire.com/file/yumo0i24u2q7lr7/Nakroth_L%25C3%25B4i_quang_s%25E1%25BB%25A9_%255BMMNAOV%255D.zip/file'">
+        <button onclick="playSound(); window.location.href='https://www.mediafire.com/file/yumo0i24u2q7lr7/Nakroth_L%25C3%25B4i_quang_s%25E1%25BB%25A9_%255BMMNAOV%255D.zip/file'">
             🚀 Tải Ngay
         </button>
-    </div>    
+    </div>
+</div>
 
-    <!-- Nội dung giả lập để test cuộn -->
-    <div class="spacer"></div>
+    <div class="skin-box">
+    <p class="title-skin">Nakroth Tiệc Bãi Biển</p>
+    <div class="container">
+        <button onclick="playSound(); window.location.href='https://www.mediafire.com/file/mutxaseg8edliv5/Nakroth_Ti%25E1%25BB%2587c_b%25C3%25A3i_bi%25E1%25BB%2583n_%255BMMNAOV%255D.zip/file'">
+            🚀 Tải Ngay
+        </button>
+    </div>
+</div>
+
+    <div class="skin-box">
+    <p class="title-skin">Nakroth Thứ Nguyên Vệ Thần</p>
+    <div class="container">
+        <button onclick="playSound(); window.location.href='https://www.mediafire.com/file/1ejral5enh067z0/Nakroth_Th%25E1%25BB%25A9_nguy%25C3%25AAn_v%25E1%25BB%2587_th%25E1%25BA%25A7n_%255BMMNAOV%255D.zip/file'">
+            🚀 Tải Ngay
+        </button>
+    </div>
+</div>
+
+    <div class="skin-box">
+    <p class="title-skin">Nakroth Killua</p>
+    <div class="container">
+        <button onclick="playSound(); window.location.href='https://www.mediafire.com/file/h75l5uq72cvhhtj/Nakroth_Killua_%255BMMNAOV%255D.zip/file'">
+            🚀 Tải Ngay
+        </button>
+    </div>
+</div>
+
+    <div class="skin-box">
+    <p class="title-skin">Nakroth Quỷ Thương Liệp đế</p>
+    <div class="container">
+        <button onclick="playSound(); window.location.href='https://www.mediafire.com/file/msmqu06j2rqu11i/Nakroth_Qu%25E1%25BB%25B7_th%25C6%25B0%25C6%25A1ng_Li%25E1%25BB%2587p_%25C4%2591%25E1%25BA%25BF_%255BMMNAOV%255D.zip/file'">
+            🚀 Tải Ngay
+        </button>
+    </div>
+</div>
+
+    <div class="skin-box">
+    <p class="title-skin">Nakroth Producer Tia Chớp</p>
+    <div class="container">
+        <button onclick="playSound(); window.location.href='https://www.mediafire.com/file/75loqm0uomqf9jx/Nakroth_Producer_Tia_ch%25E1%25BB%259Bp_%255BMMNAOV%255D.zip/file'">
+            🚀 Tải Ngay
+        </button>
+    </div>
+</div>
+
+    <div class="skin-box">
+    <p class="title-skin">Nakroth Bạch Diện Chiến Thương</p>
+    <div class="container">
+        <button onclick="playSound(); window.location.href='https://www.mediafire.com/file/oiy27qznvtu87cj/Nakroth_B%25E1%25BA%25A1ch_Di%25E1%25BB%2587n_chi%25E1%25BA%25BFn_th%25C6%25B0%25C6%25A1ng_%255BMMNAOV%255D.zip/file'">
+            🚀 Tải Ngay
+        </button>
+    </div>
+</div>
 
     <p class="swipe-hint">👉 Lướt từ trái sang phải để quay lại</p>
-    
-    <style>
-    /* Hiệu ứng thông báo lướt */
-    .swipe-hint {
-        font-size: 18px;
-        font-weight: bold;
-        color: #00ffff;
-        background: rgba(0, 255, 255, 0.1);
-        padding: 10px 15px;
-        display: inline-block;
-        border-radius: 8px;
-        box-shadow: 0px 0px 10px rgba(0, 255, 255, 0.5);
-        animation: glow 1.5s infinite alternate;
-        margin-top: 20px;
-    }
-    
-    /* Hiệu ứng sáng dần */
-    @keyframes glow {
-        0% {
-            box-shadow: 0px 0px 10px rgba(0, 255, 255, 0.5);
-        }
-        100% {
-            box-shadow: 0px 0px 20px rgba(0, 255, 255, 1);
-        }
-    }
-    </style>
-    
-    <!-- Nút cuộn lên đầu -->
+
     <div class="scroll-top" onclick="scrollToTop()">▲</div>
 
     <script>
@@ -199,12 +282,12 @@
 
             document.addEventListener("touchmove", function (e) {
                 let endX = e.touches[0].clientX;
-                if (endX - startX > 100) { // Nếu vuốt sang phải trên 100px
-                    window.history.back(); // Quay lại trang trước
+                if (endX - startX > 100) { 
+                    window.history.back(); 
                 }
             }, { once: true });
-        });    	
-        // Hiển thị nút cuộn lên khi lướt xuống
+        });
+
         window.onscroll = function () {
             var scrollButton = document.querySelector(".scroll-top");
             if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
@@ -214,10 +297,15 @@
             }
         };
 
-        // Hàm cuộn lên đầu trang
         function scrollToTop() {
             window.scrollTo({ top: 0, behavior: "smooth" });
         }
+
+        function playSound() {
+            var audio = new Audio('https://www.fesliyanstudios.com/play-mp3/387');
+            audio.play();
+        }
     </script>
+
 </body>
 </html>
