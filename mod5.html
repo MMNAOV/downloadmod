@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mod Skin Allain</title>
+    <style>
+        /* Thiết lập giao diện */
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background: linear-gradient(135deg, #000428, #004e92);
+            color: white;
+            margin: 0;
+            padding: 0;
+            scroll-behavior: smooth;
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        /* Hiệu ứng vào trang */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Tiêu đề nâng cấp */
+        h2 {
+            font-size: 32px;
+            margin-top: 20px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: #ff00ff;
+            text-shadow: 0px 0px 15px rgba(255, 0, 255, 0.8);
+            animation: neonGlow 1.5s infinite alternate;
+            text-align: center; /* Căn giữa */
+            display: block; /* Giữ thẳng hàng */
+        }
+        
+        h3 {
+            font-size: 32px;
+            margin-top: 20px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            text-align: center; /* Căn giữa */
+            display: block; /* Giữ thẳng hàng */
+        }        
+
+        /* Hiệu ứng Neon */
+        @keyframes neonGlow {
+            0% { text-shadow: 0 0 10px #ff00ff; }
+            100% { text-shadow: 0 0 20px #ff00ff, 0 0 30px #ff00ff; }
+        }
+        
+        /* Tiêu đề skin */
+        .title-skin {
+            font-size: 24px;
+            font-weight: bold;
+            color: #00ffff;
+            text-shadow: 0px 0px 12px rgba(0, 255, 255, 1);
+            margin-top: 15px;
+        }
+
+        /* Hộp chứa */
+        .container {
+            margin-top: 20px;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 20px;
+            border-radius: 15px;
+            display: inline-block;
+            box-shadow: 0px 0px 20px rgba(0, 255, 255, 0.5);
+            border: 2px solid rgba(0, 255, 255, 0.5);
+            transition: 0.3s;
+            animation: fadeIn 1.2s ease-in-out;
+        }
+
+        .container:hover {
+            transform: scale(1.05);
+            border-color: #00ffff;
+            box-shadow: 0px 0px 30px rgba(0, 255, 255, 0.8);
+        }
+
+        /* Nút tải */
+        button {
+            padding: 12px 24px;
+            font-size: 20px;
+            font-weight: bold;
+            color: white;
+            background: linear-gradient(90deg, #ff00ff, #0066ff);
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: 0.3s;
+            box-shadow: 0px 5px 20px rgba(255, 0, 255, 0.6);
+        }
+
+        button:hover {
+            background: linear-gradient(90deg, #0066ff, #ff00ff);
+            transform: scale(1.08);
+            box-shadow: 0px 5px 25px rgba(255, 0, 255, 0.8);
+        }
+
+        /* Hiệu ứng rung nhẹ khi di chuột */
+        @keyframes shake {
+            0% { transform: translateX(0); }
+            25% { transform: translateX(-2px); }
+            50% { transform: translateX(2px); }
+            75% { transform: translateX(-2px); }
+            100% { transform: translateX(0); }
+        }
+
+        button:active {
+            animation: shake 0.3s;
+        }
+
+        /* Hiệu ứng nhấp nháy */
+        .swipe-hint {
+            font-size: 18px;
+            font-weight: bold;
+            color: #00ffff;
+            background: rgba(0, 255, 255, 0.2);
+            padding: 10px 15px;
+            display: inline-block;
+            border-radius: 8px;
+            box-shadow: 0px 0px 15px rgba(0, 255, 255, 0.6);
+            animation: glow 1.5s infinite alternate;
+            margin-top: 100px;
+        }
+
+        /* Nút cuộn lên */
+        .scroll-top {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: #ff00ff;
+            color: white;
+            padding: 12px;
+            border-radius: 50%;
+            cursor: pointer;
+            display: none;
+            font-size: 18px;
+            font-weight: bold;
+            transition: 0.3s;
+            box-shadow: 0px 5px 15px rgba(255, 0, 255, 0.6);
+        }
+
+        .scroll-top:hover {
+            background: #0066ff;
+            transform: scale(1.1);
+        }
+
+.skin-box {
+    width: 85%; /* Chiếm 90% chiều rộng màn hình */
+    max-width: 600px; /* Giữ không quá lớn trên màn hình rộng */
+    padding: 20px;
+    border: 2px solid #00ffff;
+    border-radius: 15px; /* Bo góc mềm mại */
+    background: rgba(0, 255, 255, 0.1);
+    box-shadow: 0px 0px 20px rgba(0, 255, 255, 0.5);
+    transition: 0.3s;
+    animation: fadeIn 1.2s ease-in-out;
+    text-align: center;
+    margin: 20px auto; /* Căn giữa trên trang */
+}
+
+.skin-box:hover {
+    transform: scale(1.05);
+    border-color: #00ffff;
+    box-shadow: 0px 0px 30px rgba(0, 255, 255, 0.8);
+}
+    </style>
+
+</head>
+<body>
+    <h3>YTB: MMN AOV</h3>
+    <h2>Mod Skin Allain</h2>
+    <div class="skin-box">
+    <p class="title-skin">Allain Hắc kiếm sĩ Kirito</p>
+    <div class="container">
+        <button onclick="playSound(); window.location.href='https://www.mediafire.com/file/9jgiwksorfy0hce/Allain_H%25E1%25BA%25AFc_ki%25E1%25BA%25BFm_s%25C4%25A9_Kirito_%255BMMNAOV%255D.zip/file'">
+            🚀 Tải Ngay
+        </button>
+    </div>
+</div>
+
+    <div class="skin-box">
+    <p class="title-skin">Allain Kirito</p>
+    <div class="container">
+        <button onclick="playSound(); window.location.href='https://www.mediafire.com/file/kil2byq1itvi15p/Allain_Kirito_%255BMMNAOV%255D.zip/file'">
+            🚀 Tải Ngay
+        </button>
+    </div>
+</div>
+
+    <div class="skin-box">
+    <p class="title-skin">Allain Tuyết sơn song kiếm</p>
+    <div class="container">
+        <button onclick="playSound(); window.location.href='https://www.mediafire.com/file/02av5qujcpxosg2/Allain_Tuy%25E1%25BA%25BFt_s%25C6%25A1n_song_ki%25E1%25BA%25BFm_%255BMMNAOV%255D.zip/file'">
+            🚀 Tải Ngay
+        </button>
+    </div>
+</div>
+
+    <div class="skin-box">
+    <p class="title-skin">Allain Thần mặt trời</p>
+    <div class="container">
+        <button onclick="playSound(); window.location.href='https://www.mediafire.com/file/f5ofzshs9krwz1l/Allain_Th%25E1%25BA%25A7n_m%25E1%25BA%25B7t_tr%25E1%25BB%259Di_%255BMMNAOV%255D.zip/file'">
+            🚀 Tải Ngay
+        </button>
+    </div>
+</div>
+
+    <div class="skin-box">
+    <p class="title-skin">Allain Bạch kiếm sĩ</p>
+    <div class="container">
+        <button onclick="playSound(); window.location.href='https://www.mediafire.com/file/y14vizg2xnm00pg/Allain_B%25E1%25BA%25A1ch_ki%25E1%25BA%25BFm_s%25C4%25A9_%255BMMNAOV%255D.zip/file'">
+            🚀 Tải Ngay
+        </button>
+    </div>
+</div>
+
+    <div class="skin-box">
+    <p class="title-skin">Allain Hạo Thiên Khuyển</p>
+    <div class="container">
+        <button onclick="playSound(); window.location.href='https://www.mediafire.com/file/fyu51qbzixegke5/Allain_H%25E1%25BA%25A1o_Thi%25C3%25AAn_Khuy%25E1%25BB%2583n_%255BMMNAOV%255D.zip/file'">
+            🚀 Tải Ngay
+        </button>
+    </div>
+</div>
+
+    <div class="skin-box">
+    <p class="title-skin">Allain Tình yêu nổi loạn</p>
+    <div class="container">
+        <button onclick="playSound(); window.location.href='https://www.mediafire.com/file/hpwnc5iv4actk9z/Allain_T%25C3%25ACnh_y%25C3%25AAu_n%25E1%25BB%2595i_lo%25E1%25BA%25A1n_%255BMMNAOV%255D.zip/file'">
+            🚀 Tải Ngay
+        </button>
+    </div>
+</div>
+
+    <div class="skin-box">
+    <p class="title-skin">Allain Lân sư Vũ thần</p>
+    <div class="container">
+        <button onclick="playSound(); window.location.href='https://www.mediafire.com/file/vkkpctuofiw72e0/Allain_L%25C3%25A2n_s%25C6%25B0_V%25C5%25A9_th%25E1%25BA%25A7n_%255BMMNAOV%255D.zip/file'">
+            🚀 Tải Ngay
+        </button>
+    </div>
+</div>
+    <p class="swipe-hint">👉 Lướt từ trái sang phải để quay lại</p>
+
+    <div class="scroll-top" onclick="scrollToTop()">▲</div>
+
+    <script>
+        document.addEventListener("touchstart", function (e) {
+            let startX = e.touches[0].clientX;
+
+            document.addEventListener("touchmove", function (e) {
+                let endX = e.touches[0].clientX;
+                if (endX - startX > 100) { 
+                    window.history.back(); 
+                }
+            }, { once: true });
+        });
+
+        window.onscroll = function () {
+            var scrollButton = document.querySelector(".scroll-top");
+            if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+                scrollButton.style.display = "block";
+            } else {
+                scrollButton.style.display = "none";
+            }
+        };
+
+        function scrollToTop() {
+            window.scrollTo({ top: 0, behavior: "smooth" });
+        }
+
+        function playSound() {
+            var audio = new Audio('https://www.fesliyanstudios.com/play-mp3/387');
+            audio.play();
+        }
+    </script>
+
+</body>
+</html>
