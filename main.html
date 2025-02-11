@@ -313,19 +313,28 @@
 
         // Hàm tìm kiếm
         function filterMods() {
-            let input = document.getElementById("search").value.toLowerCase();
-            let buttons = document.querySelectorAll(".menu button");
+    let input = document.getElementById("search").value.trim().toLowerCase();
+    let buttons = document.querySelectorAll(".menu button");
+    let found = false;
 
-            buttons.forEach(button => {
-                let name = button.getAttribute("data-name").toLowerCase();
-                if (name.includes(input)) {
-                    button.style.display = "block";
-                } else {
-                    button.style.display = "none";
-                }
-            });
+    buttons.forEach(button => {
+        let modText = button.textContent.trim().toLowerCase(); // Lấy nội dung hiển thị trên nút
+        if (removeVietnameseTones(modText).includes(removeVietnameseTones(input))) {
+            button.style.display = "block";  
+            found = true;
+        } else {
+            button.style.display = "none";   
         }
-    </script>
+    });
+
+    document.getElementById("noResults").style.display = found ? "none" : "block";
+}
+
+// Xóa dấu tiếng Việt để tìm kiếm không phân biệt dấu
+function removeVietnameseTones(str) {
+    return str.normalize("NFD").replace(/[\u0300-\u036f]/g, "").replace(/đ/g, "d").replace(/Đ/g, "D");
+}
+</script>
 
 </body>
     </html>
